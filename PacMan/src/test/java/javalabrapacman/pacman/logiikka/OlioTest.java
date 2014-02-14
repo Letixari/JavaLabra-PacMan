@@ -102,7 +102,6 @@ public class OlioTest {
         Olio instance = new Olio();
         instance.SetLocation(26,29);
         instance.SetMovementX(3);
-        instance.WallCheck();
         assertEquals(26,instance.LocationX());
     }
 
