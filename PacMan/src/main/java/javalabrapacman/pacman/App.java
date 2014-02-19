@@ -1,16 +1,20 @@
 package javalabrapacman.pacman;
 
 import javalabrapacman.pacman.logiikka.*;
+import javax.swing.JFrame;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        Maailma Map = new Maailma();
-        Map.MapCreate();
+public class App extends JFrame {
+
+    public static void main(String[] args) {
+        new App();
+    }
+
+    public App() {
+        add(new Peli());
+        setTitle("Pacman");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setSize(580, 660);
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
 }

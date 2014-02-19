@@ -42,80 +42,80 @@ public class OlioTest {
      * Test of LocationX method, of class Olio.
      */
     @Test
-    public void testLocationX() {
+    public void testlocationX() {
         System.out.println("LocationX");
         Olio instance = new Olio();
         int expResult = 0;
-        int result = instance.LocationX();
+        int result = instance.locationX();
         assertEquals(expResult, result);
-        System.out.println(instance.LocationX());
+        System.out.println(instance.locationX());
     }
 
     /**
      * Test of LocationY method, of class Olio.
      */
     @Test
-    public void testLocationY() {
+    public void testlocationY() {
         System.out.println("LocationY");
         Olio instance = new Olio();
         int expResult = 0;
-        int result = instance.LocationY();
+        int result = instance.locationY();
         assertEquals(expResult, result);
-        System.out.println(instance.LocationY());
+        System.out.println(instance.locationY());
     }
 
     /**
      * Test of SetLocation method, of class Olio.
      */
     @Test
-    public void testSetLocation() {
+    public void testsetLocation() {
         System.out.println("SetLocation");
         int x = 11;
         int y = 12;
         Olio instance = new Olio();
-        instance.SetLocation(x, y);
-        assertEquals(11,instance.LocationX());
-        assertEquals(12,instance.LocationY());
+        instance.setLocation(x, y);
+        assertEquals(11,instance.locationX());
+        assertEquals(12,instance.locationY());
     }
 
     /**
      * Test of OutOfMapCheck method, of class Olio.
      */
     @Test
-    public void testOutOfMapCheck() {
+    public void testoutOfMapCheck() {
         System.out.println("OutOfMapCheck");
         Olio instance = new Olio();
         int x = 31;
         int y = 32;
-        instance.SetLocation(x, y);
-        instance.OutOfMapCheck();
-        assertEquals(26,instance.LocationX());
-        assertEquals(29,instance.LocationY());
+        instance.setLocation(x, y);
+        instance.outOfMapCheck();
+        assertEquals(26,instance.locationX());
+        assertEquals(29,instance.locationY());
     }
 
     /**
      * Test of WallCheck method, of class Olio.
      */
     @Test
-    public void testWallCheck() {
+    public void testwallCheck() {
         System.out.println("WallCheck");
         Olio instance = new Olio();
-        instance.SetLocation(26,29);
-        instance.SetMovementX(3);
-        assertEquals(26,instance.LocationX());
+        instance.setLocation(26,29);
+        instance.setMovementX(3);
+        assertEquals(26,instance.locationX());
     }
 
     /**
      * Test of Movement method, of class Olio.
      */
     @Test
-    public void testMovement() {
+    public void testmovement() {
         System.out.println("Movement");
         Olio instance = new Olio();
-        instance.SetLocation(13, 13);
-        instance.SetMovementX(1);
-        instance.Movement();
-        assertEquals(14,instance.LocationX());
+        instance.setLocation(13, 13);
+        instance.setMovementX(1);
+        instance.movement();
+        assertEquals(14,instance.locationX());
     }
     
 }

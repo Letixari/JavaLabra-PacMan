@@ -5,7 +5,6 @@
  */
 package javalabrapacman.pacman.logiikka;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
@@ -37,11 +36,14 @@ public class Peli extends JPanel implements ActionListener {
     Timer timer;
     Color dotcolor = new Color(192, 192, 0);
     Color mapcolor;
+    Maailma Map = new Maailma();
     Olio Pacman = new Olio();
     Olio Ghost1 = new Olio();
     Olio Ghost2 = new Olio();
     Olio Ghost3 = new Olio();
     Olio Ghost4 = new Olio();
+    int pmx = 0;
+    int pmy = 0;
 
     public Peli() {
         addKeyListener(new KeyPress());
@@ -51,38 +53,89 @@ public class Peli extends JPanel implements ActionListener {
         setBackground(Color.BLACK);
         setDoubleBuffered(true);
         timer = new Timer(40, this);
-        this.Pacman.PacmanCreate();
-        this.Ghost1.Ghost1Create();
-        this.Ghost2.Ghost2Create();
-        this.Ghost3.Ghost3Create();
-        this.Ghost4.Ghost4Create();
+        this.Map.MapCreate();
+        this.Pacman.pacmanCreate();
+        this.Ghost1.ghost1Create();
+        this.Ghost2.ghost2Create();
+        this.Ghost3.ghost3Create();
+        this.Ghost4.ghost4Create();
         timer.start();
+        this.ongoing = true;
+    }
+
+    public void drawMap(Graphics2D g2d) {
+        int x, y;
+        for (x = 0; x <= 27; x += 1) {
+            for (y = 0; y <= 30; y += 1) {
+                g2d.setColor(mapcolor);
+                if (this.Map.WallCheck(x, y)) {
+                    g2d.drawRect(x * 20, y * 20, 20, 20);
+                }
+            }
+        }
+    }
+
+    public void drawPacman(Graphics2D g2d) {
+        g2d.setColor(Color.BLUE);
+        g2d.drawRect(Pacman.locationX() * 20, Pacman.locationY() * 20, 20, 20);
+    }
+
+    public void moveGhosts(Graphics2D g) {
+        this.Ghost1.moveRandom();
+        this.Ghost2.moveRandom();
+        this.Ghost3.moveRandom();
+        this.Ghost4.moveRandom();
+    }
+
+    public void movePacman() {
+        this.Pacman.move(this.pmx, this.pmy);
+    }
+
+    public void play(Graphics2D g2d) {
+        movePacman();
+        drawPacman(g2d);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setColor(Color.BLACK);
+        drawMap(g2d);
+        if (ongoing) {
+            play(g2d);
+        }
+        Toolkit.getDefaultToolkit().sync();
+        g.dispose();
     }
 
     class KeyPress extends KeyAdapter {
 
-        public void KeyPressed(KeyEvent event) {
-            int key = event.getKeyCode();
-            if (ongoing == true) {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            int key = e.getKeyCode();
+            if (ongoing) {
                 if (key == KeyEvent.VK_UP) {
-                    if (Pacman.WallCheck(0, 1) == false) {
-                        Pacman.SetMovementY(1);
-                    }
+                    pmy = -1;
+                    pmx = 0;
                 } else if (key == KeyEvent.VK_DOWN) {
-                    if (Pacman.WallCheck(0, -1) == false) {
-                        Pacman.SetMovementY(-1);
-                    }
+                    pmy = 1;
+                    pmx = 0;
                 } else if (key == KeyEvent.VK_LEFT) {
-                    if (Pacman.WallCheck(-1, 0) == false) {
-                        Pacman.SetMovementX(-1);
-                    }
+                    pmx = -1;
+                    pmy = 0;
                 } else if (key == KeyEvent.VK_RIGHT) {
-                    if (Pacman.WallCheck(1, 0) == false) {
-                        Pacman.SetMovementX(1);
-                    }
-                } else if (key == KeyEvent.VK_ESCAPE) {
-                    ongoing = false;
+                    pmx = 1;
+                    pmy = 0;
                 }
+            }
+        }
+
+        public void keyReleased(KeyEvent e) {
+            int key = e.getKeyCode();
+            if (key == Event.LEFT || key == Event.RIGHT || key == Event.UP || key == Event.DOWN) {
+                pmx = 0;
+                pmy = 0;
             }
         }
     }

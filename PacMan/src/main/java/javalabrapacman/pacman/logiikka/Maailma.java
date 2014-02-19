@@ -72,12 +72,12 @@ public class Maailma {
         X26Create();
         X27Create();
     }
-
     public boolean WallCheck(int x, int y) {
         int wallstatus=1;
         switch (x) {
             case 0:
                 wallstatus = this.X0.get(y);
+                break;
             case 1:
                 wallstatus = this.X1.get(y);
                 break;
@@ -438,9 +438,9 @@ public class Maailma {
         this.X11.add(1);
         this.X11.add(0);
         this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(1);
+        this.X11.add(0);
+        this.X11.add(0);
+        this.X11.add(0);
         this.X11.add(1);
         this.X11.add(0);
         this.X11.add(1);
@@ -472,9 +472,9 @@ public class Maailma {
         this.X12.add(0);
         this.X12.add(0);
         this.X12.add(1);
-        this.X12.add(1);
-        this.X12.add(1);
-        this.X12.add(1);
+        this.X12.add(0);
+        this.X12.add(0);
+        this.X12.add(0);
         this.X12.add(1);
         this.X12.add(0);
         this.X12.add(1);
@@ -506,9 +506,9 @@ public class Maailma {
         this.X13.add(1);
         this.X13.add(0);
         this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
+        this.X13.add(0);
+        this.X13.add(0);
+        this.X13.add(0);
         this.X13.add(1);
         this.X13.add(0);
         this.X13.add(1);
@@ -540,9 +540,9 @@ public class Maailma {
         this.X14.add(1);
         this.X14.add(0);
         this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
+        this.X14.add(0);
+        this.X14.add(0);
+        this.X14.add(0);
         this.X14.add(1);
         this.X14.add(0);
         this.X14.add(1);
@@ -574,9 +574,9 @@ public class Maailma {
         this.X15.add(0);
         this.X15.add(0);
         this.X15.add(1);
-        this.X15.add(1);
-        this.X15.add(1);
-        this.X15.add(1);
+        this.X15.add(0);
+        this.X15.add(0);
+        this.X15.add(0);
         this.X15.add(1);
         this.X15.add(0);
         this.X15.add(1);
@@ -608,9 +608,9 @@ public class Maailma {
         this.X16.add(1);
         this.X16.add(0);
         this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(1);
+        this.X16.add(0);
+        this.X16.add(0);
+        this.X16.add(0);
         this.X16.add(1);
         this.X16.add(0);
         this.X16.add(1);
@@ -762,6 +762,10 @@ public class Maailma {
     }
 
     public void X22Create() {
+        this.X22.add(1);
+        this.X22.add(0);
+        this.X22.add(1);
+        this.X22.add(1);
         this.X22.add(1);
         this.X22.add(0);
         this.X22.add(1);
