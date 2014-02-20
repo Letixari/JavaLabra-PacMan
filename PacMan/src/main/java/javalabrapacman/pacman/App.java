@@ -13,7 +13,7 @@ public class App extends JFrame {
         add(new Peli());
         setTitle("Pacman");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(580, 660);
+        setSize(580, 680);
         setLocationRelativeTo(null);
         setVisible(true);
     }

@@ -72,7 +72,7 @@ public class Maailma {
         X26Create();
         X27Create();
     }
-    public boolean WallCheck(int x, int y) {
+    public boolean wallCheck(int x, int y) {
         int wallstatus=1;
         switch (x) {
             case 0:
@@ -505,7 +505,7 @@ public class Maailma {
         this.X13.add(1);
         this.X13.add(1);
         this.X13.add(0);
-        this.X13.add(1);
+        this.X13.add(0);
         this.X13.add(0);
         this.X13.add(0);
         this.X13.add(0);
@@ -539,7 +539,7 @@ public class Maailma {
         this.X14.add(1);
         this.X14.add(1);
         this.X14.add(0);
-        this.X14.add(1);
+        this.X14.add(0);
         this.X14.add(0);
         this.X14.add(0);
         this.X14.add(0);

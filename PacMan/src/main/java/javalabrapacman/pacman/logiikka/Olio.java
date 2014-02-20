@@ -58,20 +58,25 @@ public class Olio {
     public void moveRandom() {
         Random r = new Random();
         int random = r.nextInt(4) + 1;
-        switch (random) {
-            case 1:
-                move(0, 1);
-                break;
-            case 2:
-                move(0, -1);
-                break;
-            case 3:
-                move(-1, 0);
-                break;
-            case 4:
-                move(1, 0);
-                break;
+        if ((Map.wallCheck(this.X - 1, this.Y) && Map.wallCheck(this.X + 1, this.Y)) || (Map.wallCheck(this.X, this.Y - 1) && Map.wallCheck(this.X, this.Y + 1))) {
+            move(this.movementX, this.movementY);
+        } else {
+            switch (random) {
+                case 1:
+                    move(0, 1);
+                    break;
+                case 2:
+                    move(0, -1);
+                    break;
+                case 3:
+                    move(-1, 0);
+                    break;
+                case 4:
+                    move(1, 0);
+                    break;
+            }
         }
+
     }
 
     public void move(int mx, int my) {
@@ -135,7 +140,7 @@ public class Olio {
 
     public boolean wallCheck(int mx, int my) {
         this.outOfMapCheck();
-        boolean WallStatus = Map.WallCheck(this.X + mx, this.Y + my);
+        boolean WallStatus = Map.wallCheck(this.X + mx, this.Y + my);
         if (WallStatus == true) {
             return true;
         }

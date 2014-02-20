@@ -31,10 +31,10 @@ public class Peli extends JPanel implements ActionListener {
 
     Dimension dimension;
     boolean ongoing = false;
-    int deathcounter;
+    Font font = new Font("Helvetica", Font.BOLD, 14);
+    int deathcounter = 0;
     int score;
     Timer timer;
-    Color dotcolor = new Color(192, 192, 0);
     Color mapcolor;
     Maailma Map = new Maailma();
     Olio Pacman = new Olio();
@@ -53,6 +53,10 @@ public class Peli extends JPanel implements ActionListener {
         setBackground(Color.BLACK);
         setDoubleBuffered(true);
         timer = new Timer(40, this);
+        gameInit();
+    }
+
+    public void gameInit() {
         this.Map.MapCreate();
         this.Pacman.pacmanCreate();
         this.Ghost1.ghost1Create();
@@ -68,7 +72,7 @@ public class Peli extends JPanel implements ActionListener {
         for (x = 0; x <= 27; x += 1) {
             for (y = 0; y <= 30; y += 1) {
                 g2d.setColor(mapcolor);
-                if (this.Map.WallCheck(x, y)) {
+                if (this.Map.wallCheck(x, y)) {
                     g2d.drawRect(x * 20, y * 20, 20, 20);
                 }
             }
@@ -80,7 +84,23 @@ public class Peli extends JPanel implements ActionListener {
         g2d.drawRect(Pacman.locationX() * 20, Pacman.locationY() * 20, 20, 20);
     }
 
-    public void moveGhosts(Graphics2D g) {
+    public void drawGhosts(Graphics2D g2d) {
+        g2d.setColor(Color.RED);
+        g2d.drawRect(Ghost1.locationX() * 20, Ghost1.locationY() * 20, 20, 20);
+        g2d.drawRect(Ghost2.locationX() * 20, Ghost2.locationY() * 20, 20, 20);
+        g2d.drawRect(Ghost3.locationX() * 20, Ghost3.locationY() * 20, 20, 20);
+        g2d.drawRect(Ghost4.locationX() * 20, Ghost4.locationY() * 20, 20, 20);
+    }
+
+    public void drawScore(Graphics2D g2d) {
+        g2d.setFont(font);
+        g2d.setColor(Color.ORANGE);
+        String s = "Score: " + this.score;
+        String dc = "Deaths: " + this.deathcounter;
+        g2d.drawString(dc, 1, 640);
+    }
+
+    public void moveGhosts() {
         this.Ghost1.moveRandom();
         this.Ghost2.moveRandom();
         this.Ghost3.moveRandom();
@@ -91,9 +111,34 @@ public class Peli extends JPanel implements ActionListener {
         this.Pacman.move(this.pmx, this.pmy);
     }
 
+    public void death() {
+        this.ongoing = false;
+        this.deathcounter++;
+        this.pmx=0;
+        this.pmy=0;
+        this.Pacman.move(pmx, pmy);
+        gameInit();
+    }
+
+    public void checkCollide() {
+        if (this.Pacman.locationX() == this.Ghost1.locationX() && this.Pacman.locationY() == this.Ghost1.locationY()) {
+            death();
+        } else if (this.Pacman.locationX() == this.Ghost2.locationX() && this.Pacman.locationY() == this.Ghost2.locationY()) {
+            death();
+        } else if (this.Pacman.locationX() == this.Ghost3.locationX() && this.Pacman.locationY() == this.Ghost3.locationY()) {
+            death();
+        } else if (this.Pacman.locationX() == this.Ghost4.locationX() && this.Pacman.locationY() == this.Ghost4.locationY()) {
+            death();
+        }
+    }
+
     public void play(Graphics2D g2d) {
         movePacman();
+        checkCollide();
+        moveGhosts();
+        checkCollide();
         drawPacman(g2d);
+        drawGhosts(g2d);
     }
 
     @Override
@@ -102,6 +147,7 @@ public class Peli extends JPanel implements ActionListener {
         Graphics2D g2d = (Graphics2D) g;
         g2d.setColor(Color.BLACK);
         drawMap(g2d);
+        drawScore(g2d);
         if (ongoing) {
             play(g2d);
         }
@@ -131,6 +177,7 @@ public class Peli extends JPanel implements ActionListener {
             }
         }
 
+        @Override
         public void keyReleased(KeyEvent e) {
             int key = e.getKeyCode();
             if (key == Event.LEFT || key == Event.RIGHT || key == Event.UP || key == Event.DOWN) {
@@ -142,6 +189,11 @@ public class Peli extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        try {
+            Thread.sleep(50);
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        }
         repaint();
     }
 }
