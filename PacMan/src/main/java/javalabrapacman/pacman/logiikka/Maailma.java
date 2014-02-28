@@ -72,8 +72,9 @@ public class Maailma {
         X26Create();
         X27Create();
     }
+
     public boolean wallCheck(int x, int y) {
-        int wallstatus=1;
+        int wallstatus = 1;
         switch (x) {
             case 0:
                 wallstatus = this.X0.get(y);
@@ -160,739 +161,238 @@ public class Maailma {
                 wallstatus = this.X27.get(y);
                 break;
         }
-        if(wallstatus==1){
+        if (wallstatus == 1) {
             return true;
         }
         return false;
     }
 
+    public void print() {
+        System.out.println(this.X0.toString());
+        System.out.println(this.X1.toString());
+        System.out.println(this.X2.toString());
+        System.out.println(this.X3.toString());
+        System.out.println(this.X4.toString());
+        System.out.println(this.X5.toString());
+        System.out.println(this.X6.toString());
+        System.out.println(this.X7.toString());
+        System.out.println(this.X8.toString());
+        System.out.println(this.X9.toString());
+        System.out.println(this.X10.toString());
+        System.out.println(this.X11.toString());
+        System.out.println(this.X12.toString());
+        System.out.println(this.X13.toString());
+        System.out.println(this.X14.toString());
+        System.out.println(this.X15.toString());
+        System.out.println(this.X16.toString());
+        System.out.println(this.X17.toString());
+        System.out.println(this.X18.toString());
+        System.out.println(this.X19.toString());
+        System.out.println(this.X20.toString());
+        System.out.println(this.X21.toString());
+        System.out.println(this.X22.toString());
+        System.out.println(this.X23.toString());
+        System.out.println(this.X24.toString());
+        System.out.println(this.X25.toString());
+        System.out.println(this.X26.toString());
+        System.out.println(this.X27.toString());
+
+    }
+
     public void X0Create() {
-        this.X0.add(1);
-        while (this.X0.size() <= 30) {
-            this.X0.add(1);
+        int X0List[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        for (int i = 0; i < X0List.length; i++) {
+            this.X0.add(X0List[i]);
         }
     }
 
     public void X1Create() {
-        this.X1.add(1);
-        while (this.X1.size() < 9) {
-            this.X1.add(0);
+        int X1List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        for (int i = 0; i < X1List.length; i++) {
+            this.X1.add(X1List[i]);
         }
-        while (this.X1.size() < 20) {
-            this.X1.add(1);
-        }
-        while (this.X1.size() < 24) {
-            this.X1.add(0);
-        }
-        this.X1.add(1);
-        this.X1.add(1);
-        while (this.X1.size() < 30) {
-            this.X1.add(0);
-        }
-        this.X1.add(1);
     }
 
     public void X2Create() {
-        this.X2.add(1);
-        this.X2.add(0);
-        while (this.X2.size() < 5) {
-            this.X2.add(1);
+        int X2List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X2List.length; i++) {
+            this.X2.add(X2List[i]);
         }
-        this.X2.add(0);
-        this.X2.add(1);
-        this.X2.add(1);
-        this.X2.add(0);
-        while (this.X2.size() < 20) {
-            this.X2.add(1);
-        }
-        this.X2.add(0);
-        this.X2.add(1);
-        this.X2.add(1);
-        this.X2.add(0);
-        this.X2.add(1);
-        this.X2.add(1);
-        this.X2.add(0);
-        this.X2.add(1);
-        this.X2.add(1);
-        this.X2.add(0);
-        this.X2.add(1);
     }
 
     public void X3Create() {
-        this.X3.add(1);
-        this.X3.add(0);
-        this.X3.add(1);
-        this.X3.add(1);
-        this.X3.add(1);
-        this.X3.add(0);
-        this.X3.add(1);
-        this.X3.add(1);
-        this.X3.add(0);
-        while (this.X3.size() < 20) {
-            this.X3.add(1);
+        int X3List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X3List.length; i++) {
+            this.X3.add(X3List[i]);
         }
-        this.X3.add(0);
-        this.X3.add(1);
-        this.X3.add(1);
-        this.X3.add(0);
-        this.X3.add(0);
-        this.X3.add(0);
-        this.X3.add(0);
-        this.X3.add(1);
-        this.X3.add(1);
-        this.X3.add(0);
-        this.X3.add(1);
     }
 
     public void X4Create() {
-        this.X4.add(1);
-        this.X4.add(0);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(0);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(0);
-        while (this.X4.size() < 20) {
-            this.X4.add(1);
+        int X4List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X4List.length; i++) {
+            this.X4.add(X4List[i]);
         }
-        this.X4.add(0);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(0);
-        this.X4.add(1);
-        this.X4.add(1);
-        this.X4.add(0);
-        this.X4.add(1);
     }
 
     public void X5Create() {
-        this.X5.add(1);
-        this.X5.add(0);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(0);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(0);
-        while (this.X5.size() < 20) {
-            this.X5.add(1);
+        int X5List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X5List.length; i++) {
+            this.X5.add(X5List[i]);
         }
-        this.X5.add(0);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(0);
-        this.X5.add(1);
-        this.X5.add(1);
-        this.X5.add(0);
-        this.X5.add(1);
     }
 
     public void X6Create() {
-        this.X6.add(1);
-        this.X6.add(0);
-        while (this.X6.size() < 27) {
-            this.X6.add(0);
+        int X6List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X6List.length; i++) {
+            this.X6.add(X6List[i]);
         }
-        this.X6.add(1);
-        this.X6.add(1);
-        this.X6.add(0);
-        this.X6.add(1);
     }
 
     public void X7Create() {
-        this.X7.add(1);
-        this.X7.add(0);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(0);
-        while (this.X7.size() < 16) {
-            this.X7.add(1);
+        int X7List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X7List.length; i++) {
+            this.X7.add(X7List[i]);
         }
-        this.X7.add(0);
-        while (this.X7.size() < 20) {
-            this.X7.add(1);
-        }
-        this.X7.add(0);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(0);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(1);
-        this.X7.add(0);
-        this.X7.add(1);
     }
 
     public void X8Create() {
-        this.X8.add(1);
-        this.X8.add(0);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(0);
-        while (this.X8.size() < 16) {
-            this.X8.add(1);
+        int X8List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X8List.length; i++) {
+            this.X8.add(X8List[i]);
         }
-        this.X8.add(0);
-        while (this.X8.size() < 20) {
-            this.X8.add(1);
-        }
-        this.X8.add(0);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(0);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(1);
-        this.X8.add(0);
-        this.X8.add(1);
     }
 
     public void X9Create() {
-        this.X9.add(1);
-        this.X9.add(0);
-        this.X9.add(1);
-        this.X9.add(1);
-        this.X9.add(1);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(1);
-        this.X9.add(1);
-        while (this.X9.size() < 20) {
-            this.X9.add(0);
+        int X9List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X9List.length; i++) {
+            this.X9.add(X9List[i]);
         }
-        this.X9.add(0);
-        this.X9.add(1);
-        this.X9.add(1);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(0);
-        this.X9.add(1);
-        this.X9.add(1);
-        this.X9.add(0);
-        this.X9.add(1);
     }
 
     public void X10Create() {
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
-        this.X10.add(1);
-        this.X10.add(0);
-        this.X10.add(1);
+        int X10List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X10List.length; i++) {
+            this.X10.add(X10List[i]);
+        }
     }
 
     public void X11Create() {
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(0);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
-        this.X11.add(1);
-        this.X11.add(0);
-        this.X11.add(1);
+        int X11List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X11List.length; i++) {
+            this.X11.add(X11List[i]);
+        }
     }
 
     public void X12Create() {
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(1);
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(1);
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(1);
-        this.X12.add(1);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(0);
-        this.X12.add(1);
+        int X12List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        for (int i = 0; i < X12List.length; i++) {
+            this.X12.add(X12List[i]);
+        }
     }
 
     public void X13Create() {
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(0);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(0);
-        this.X13.add(0);
-        this.X13.add(0);
-        this.X13.add(0);
-        this.X13.add(0);
-        this.X13.add(1);
-        this.X13.add(0);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(0);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(1);
-        this.X13.add(0);
-        this.X13.add(1);
+        int X13List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X13List.length; i++) {
+            this.X13.add(X13List[i]);
+        }
     }
 
     public void X14Create() {
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(0);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(0);
-        this.X14.add(0);
-        this.X14.add(0);
-        this.X14.add(0);
-        this.X14.add(0);
-        this.X14.add(1);
-        this.X14.add(0);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(0);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(1);
-        this.X14.add(0);
-        this.X14.add(1);
+        int X14List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X14List.length; i++) {
+            this.X14.add(X14List[i]);
+        }
     }
 
     public void X15Create() {
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(1);
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(1);
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(1);
-        this.X15.add(1);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(0);
-        this.X15.add(1);
+        int X15List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        for (int i = 0; i < X15List.length; i++) {
+            this.X15.add(X15List[i]);
+        }
     }
 
     public void X16Create() {
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(0);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
-        this.X16.add(1);
-        this.X16.add(0);
-        this.X16.add(1);
+        int X16List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X16List.length; i++) {
+            this.X16.add(X16List[i]);
+        }
     }
 
     public void X17Create() {
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-        this.X17.add(1);
-        this.X17.add(0);
-        this.X17.add(1);
-
+        int X17List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X17List.length; i++) {
+            this.X17.add(X17List[i]);
+        }
     }
 
     public void X18Create() {
-        this.X18.add(1);
-        this.X18.add(0);
-        this.X18.add(1);
-        this.X18.add(1);
-        this.X18.add(1);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(1);
-        this.X18.add(1);
-        while (this.X18.size() < 20) {
-            this.X18.add(0);
+        int X18List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X18List.length; i++) {
+            this.X18.add(X18List[i]);
         }
-        this.X18.add(0);
-        this.X18.add(1);
-        this.X18.add(1);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(0);
-        this.X18.add(1);
-        this.X18.add(1);
-        this.X18.add(0);
-        this.X18.add(1);
 
     }
 
     public void X19Create() {
-        this.X19.add(1);
-        this.X19.add(0);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(0);
-        while (this.X19.size() < 16) {
-            this.X19.add(1);
+        int X19List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X19List.length; i++) {
+            this.X19.add(X19List[i]);
         }
-        this.X19.add(0);
-        while (this.X19.size() < 20) {
-            this.X19.add(1);
-        }
-        this.X19.add(0);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(0);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(1);
-        this.X19.add(0);
-        this.X19.add(1);
-
     }
 
     public void X20Create() {
-        this.X20.add(1);
-        this.X20.add(0);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(0);
-        while (this.X20.size() < 16) {
-            this.X20.add(1);
+        int X20List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        for (int i = 0; i < X20List.length; i++) {
+            this.X20.add(X20List[i]);
         }
-        this.X20.add(0);
-        while (this.X20.size() < 20) {
-            this.X20.add(1);
-        }
-        this.X20.add(0);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(0);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(1);
-        this.X20.add(0);
-        this.X20.add(1);
-
     }
 
     public void X21Create() {
-        this.X21.add(1);
-        this.X21.add(0);
-        while (this.X21.size() < 27) {
-            this.X21.add(0);
+        int X21List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X21List.length; i++) {
+            this.X21.add(X21List[i]);
         }
-        this.X21.add(1);
-        this.X21.add(1);
-        this.X21.add(0);
-        this.X21.add(1);
-
     }
 
     public void X22Create() {
-        this.X22.add(1);
-        this.X22.add(0);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(0);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(0);
-        while (this.X22.size() < 20) {
-            this.X22.add(1);
+        int X22List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X22List.length; i++) {
+            this.X22.add(X22List[i]);
         }
-        this.X22.add(0);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(0);
-        this.X22.add(1);
-        this.X22.add(1);
-        this.X22.add(0);
-        this.X22.add(1);
-
     }
 
     public void X23Create() {
-        this.X23.add(1);
-        this.X23.add(0);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(0);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(0);
-        while (this.X23.size() < 20) {
-            this.X23.add(1);
+        int X23List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X23List.length; i++) {
+            this.X23.add(X23List[i]);
         }
-        this.X23.add(0);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(0);
-        this.X23.add(1);
-        this.X23.add(1);
-        this.X23.add(0);
-        this.X23.add(1);
-
     }
 
     public void X24Create() {
-        this.X24.add(1);
-        this.X24.add(0);
-        this.X24.add(1);
-        this.X24.add(1);
-        this.X24.add(1);
-        this.X24.add(0);
-        this.X24.add(1);
-        this.X24.add(1);
-        this.X24.add(0);
-        while (this.X24.size() < 20) {
-            this.X24.add(1);
+        int X24List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X24List.length; i++) {
+            this.X24.add(X24List[i]);
         }
-        this.X24.add(0);
-        this.X24.add(1);
-        this.X24.add(1);
-        this.X24.add(0);
-        this.X24.add(0);
-        this.X24.add(0);
-        this.X24.add(0);
-        this.X24.add(1);
-        this.X24.add(1);
-        this.X24.add(0);
-        this.X24.add(1);
-
     }
 
     public void X25Create() {
-        this.X25.add(1);
-        this.X25.add(0);
-        while (this.X25.size() < 5) {
-            this.X25.add(1);
+        int X25List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        for (int i = 0; i < X25List.length; i++) {
+            this.X25.add(X25List[i]);
         }
-        this.X25.add(0);
-        this.X25.add(1);
-        this.X25.add(1);
-        this.X25.add(0);
-        while (this.X25.size() < 20) {
-            this.X25.add(1);
-        }
-        this.X25.add(0);
-        this.X25.add(1);
-        this.X25.add(1);
-        this.X25.add(0);
-        this.X25.add(1);
-        this.X25.add(1);
-        this.X25.add(0);
-        this.X25.add(1);
-        this.X25.add(1);
-        this.X25.add(0);
-        this.X25.add(1);
-
     }
 
     public void X26Create() {
-        this.X26.add(1);
-        while (this.X26.size() < 9) {
-            this.X26.add(0);
+        int X26List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        for (int i = 0; i < X26List.length; i++) {
+            this.X26.add(X26List[i]);
         }
-        while (this.X26.size() < 20) {
-            this.X26.add(1);
-        }
-        while (this.X26.size() < 24) {
-            this.X26.add(0);
-        }
-        this.X26.add(1);
-        this.X26.add(1);
-        while (this.X26.size() < 30) {
-            this.X26.add(0);
-        }
-        this.X26.add(1);
-
     }
 
     public void X27Create() {
-        this.X27.add(1);
-        while (this.X27.size() <= 30) {
-            this.X27.add(1);
+        int X27List[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
+        for (int i = 0; i < X27List.length; i++) {
+            this.X27.add(X27List[i]);
         }
     }
 
