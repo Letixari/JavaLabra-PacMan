@@ -33,6 +33,7 @@ public class Peli extends JPanel implements ActionListener {
     boolean ongoing = false;
     Font font = new Font("Helvetica", Font.BOLD, 14);
     int deathcounter = 0;
+    int totalscore;
     int score;
     Timer timer;
     Color mapcolor;
@@ -74,7 +75,15 @@ public class Peli extends JPanel implements ActionListener {
                 g2d.setColor(mapcolor);
                 if (this.Map.wallCheck(x, y)) {
                     g2d.drawRect(x * 20, y * 20, 20, 20);
+                } else {
+                    for (int i = 0; i < this.Map.PacDots.size(); i++) {
+                        if (this.Map.PacDots.get(i).getX() == x && this.Map.PacDots.get(i).getY() == y) {
+                            g2d.setColor(Color.YELLOW);
+                            g2d.drawRect(x * 20, y * 20, 19, 19);
+                        }
+                    }
                 }
+
             }
         }
     }
@@ -95,9 +104,12 @@ public class Peli extends JPanel implements ActionListener {
     public void drawScore(Graphics2D g2d) {
         g2d.setFont(font);
         g2d.setColor(Color.ORANGE);
-        String s = "Score: " + this.score;
+        String s = "Score(this life): " + this.score;
+        String ts = "Total Score: " + this.totalscore;
         String dc = "Deaths: " + this.deathcounter;
         g2d.drawString(dc, 1, 640);
+        g2d.drawString(s, 150, 640);
+        g2d.drawString(ts, 300, 640);
     }
 
     public void moveGhosts() {
@@ -114,9 +126,10 @@ public class Peli extends JPanel implements ActionListener {
     public void death() {
         this.ongoing = false;
         this.deathcounter++;
-        this.pmx=0;
-        this.pmy=0;
+        this.pmx = 0;
+        this.pmy = 0;
         this.Pacman.move(pmx, pmy);
+        this.score = 0;
         gameInit();
     }
 
@@ -130,6 +143,13 @@ public class Peli extends JPanel implements ActionListener {
         } else if (this.Pacman.locationX() == this.Ghost4.locationX() && this.Pacman.locationY() == this.Ghost4.locationY()) {
             death();
         }
+        for (int i = 0; i < this.Map.PacDots.size(); i++) {
+            if (this.Map.PacDots.get(i).getX() == this.Pacman.locationX() && this.Map.PacDots.get(i).getY() == this.Pacman.locationY()) {
+                this.score = this.score + 10;
+                this.totalscore = this.totalscore + 10;
+                this.Map.PacDots.remove(i);
+            }
+        }
     }
 
     public void play(Graphics2D g2d) {
@@ -139,6 +159,11 @@ public class Peli extends JPanel implements ActionListener {
         checkCollide();
         drawPacman(g2d);
         drawGhosts(g2d);
+        if (this.Map.PacDots.isEmpty()) {
+            this.score=this.score+1000;
+            this.totalscore=this.totalscore+1000;
+            gameInit();
+        }
     }
 
     @Override

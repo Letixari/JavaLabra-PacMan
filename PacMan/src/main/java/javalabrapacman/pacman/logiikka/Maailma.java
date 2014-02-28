@@ -41,6 +41,7 @@ public class Maailma {
     private ArrayList<Integer> X25 = new ArrayList<Integer>();
     private ArrayList<Integer> X26 = new ArrayList<Integer>();
     private ArrayList<Integer> X27 = new ArrayList<Integer>();
+    public ArrayList<PacDot> PacDots = new ArrayList<PacDot>();
 
     public void MapCreate() {
         X0Create();
@@ -196,7 +197,6 @@ public class Maailma {
         System.out.println(this.X25.toString());
         System.out.println(this.X26.toString());
         System.out.println(this.X27.toString());
-
     }
 
     public void X0Create() {
@@ -210,6 +210,9 @@ public class Maailma {
         int X1List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X1List.length; i++) {
             this.X1.add(X1List[i]);
+            if (X1List[i] == 0) {
+                PacDots.add(new PacDot(1, i));
+            }
         }
     }
 
@@ -217,6 +220,9 @@ public class Maailma {
         int X2List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X2List.length; i++) {
             this.X2.add(X2List[i]);
+            if (X2List[i] == 0) {
+                PacDots.add(new PacDot(2, i));
+            }
         }
     }
 
@@ -224,6 +230,9 @@ public class Maailma {
         int X3List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X3List.length; i++) {
             this.X3.add(X3List[i]);
+            if (X3List[i] == 0) {
+                PacDots.add(new PacDot(3, i));
+            }
         }
     }
 
@@ -231,6 +240,9 @@ public class Maailma {
         int X4List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X4List.length; i++) {
             this.X4.add(X4List[i]);
+            if (X4List[i] == 0) {
+                PacDots.add(new PacDot(4, i));
+            }
         }
     }
 
@@ -238,6 +250,9 @@ public class Maailma {
         int X5List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X5List.length; i++) {
             this.X5.add(X5List[i]);
+            if (X5List[i] == 0) {
+                PacDots.add(new PacDot(5, i));
+            }
         }
     }
 
@@ -245,6 +260,9 @@ public class Maailma {
         int X6List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X6List.length; i++) {
             this.X6.add(X6List[i]);
+            if (X6List[i] == 0) {
+                PacDots.add(new PacDot(6, i));
+            }
         }
     }
 
@@ -252,6 +270,9 @@ public class Maailma {
         int X7List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X7List.length; i++) {
             this.X7.add(X7List[i]);
+            if (X7List[i] == 0) {
+                PacDots.add(new PacDot(7, i));
+            }
         }
     }
 
@@ -259,6 +280,9 @@ public class Maailma {
         int X8List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X8List.length; i++) {
             this.X8.add(X8List[i]);
+            if (X8List[i] == 0) {
+                PacDots.add(new PacDot(8, i));
+            }
         }
     }
 
@@ -266,6 +290,11 @@ public class Maailma {
         int X9List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X9List.length; i++) {
             this.X9.add(X9List[i]);
+            if (X9List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(9, i));
+                }
+            }
         }
     }
 
@@ -273,6 +302,11 @@ public class Maailma {
         int X10List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X10List.length; i++) {
             this.X10.add(X10List[i]);
+            if (X10List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(10, i));
+                }
+            }
         }
     }
 
@@ -280,6 +314,11 @@ public class Maailma {
         int X11List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X11List.length; i++) {
             this.X11.add(X11List[i]);
+            if (X11List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(11, i));
+                }
+            }
         }
     }
 
@@ -287,6 +326,11 @@ public class Maailma {
         int X12List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X12List.length; i++) {
             this.X12.add(X12List[i]);
+            if (X12List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(12, i));
+                }
+            }
         }
     }
 
@@ -294,6 +338,11 @@ public class Maailma {
         int X13List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X13List.length; i++) {
             this.X13.add(X13List[i]);
+            if (X13List[i] == 0) {
+                if ((i < 12 || i > 18) && (i != 23)) {
+                    PacDots.add(new PacDot(13, i));
+                }
+            }
         }
     }
 
@@ -301,6 +350,11 @@ public class Maailma {
         int X14List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X14List.length; i++) {
             this.X14.add(X14List[i]);
+            if (X14List[i] == 0) {
+                if (i < 12 || i > 18 && (i != 23)) {
+                    PacDots.add(new PacDot(14, i));
+                }
+            }
         }
     }
 
@@ -308,6 +362,11 @@ public class Maailma {
         int X15List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X15List.length; i++) {
             this.X15.add(X15List[i]);
+            if (X15List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(15, i));
+                }
+            }
         }
     }
 
@@ -315,6 +374,11 @@ public class Maailma {
         int X16List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X16List.length; i++) {
             this.X16.add(X16List[i]);
+            if (X16List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(16, i));
+                }
+            }
         }
     }
 
@@ -322,6 +386,11 @@ public class Maailma {
         int X17List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X17List.length; i++) {
             this.X17.add(X17List[i]);
+            if (X17List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(17, i));
+                }
+            }
         }
     }
 
@@ -329,6 +398,11 @@ public class Maailma {
         int X18List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X18List.length; i++) {
             this.X18.add(X18List[i]);
+            if (X18List[i] == 0) {
+                if (i < 12 || i > 18) {
+                    PacDots.add(new PacDot(18, i));
+                }
+            }
         }
 
     }
@@ -337,6 +411,9 @@ public class Maailma {
         int X19List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X19List.length; i++) {
             this.X19.add(X19List[i]);
+            if (X19List[i] == 0) {
+                PacDots.add(new PacDot(19, i));
+            }
         }
     }
 
@@ -344,6 +421,9 @@ public class Maailma {
         int X20List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X20List.length; i++) {
             this.X20.add(X20List[i]);
+            if (X20List[i] == 0) {
+                PacDots.add(new PacDot(20, i));
+            }
         }
     }
 
@@ -351,6 +431,9 @@ public class Maailma {
         int X21List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X21List.length; i++) {
             this.X21.add(X21List[i]);
+            if (X21List[i] == 0) {
+                PacDots.add(new PacDot(21, i));
+            }
         }
     }
 
@@ -358,6 +441,9 @@ public class Maailma {
         int X22List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X22List.length; i++) {
             this.X22.add(X22List[i]);
+            if (X22List[i] == 0) {
+                PacDots.add(new PacDot(22, i));
+            }
         }
     }
 
@@ -365,6 +451,9 @@ public class Maailma {
         int X23List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X23List.length; i++) {
             this.X23.add(X23List[i]);
+            if (X23List[i] == 0) {
+                PacDots.add(new PacDot(23, i));
+            }
         }
     }
 
@@ -372,6 +461,9 @@ public class Maailma {
         int X24List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X24List.length; i++) {
             this.X24.add(X24List[i]);
+            if (X24List[i] == 0) {
+                PacDots.add(new PacDot(24, i));
+            }
         }
     }
 
@@ -379,6 +471,9 @@ public class Maailma {
         int X25List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X25List.length; i++) {
             this.X25.add(X25List[i]);
+            if (X25List[i] == 0) {
+                PacDots.add(new PacDot(25, i));
+            }
         }
     }
 
@@ -386,6 +481,9 @@ public class Maailma {
         int X26List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X26List.length; i++) {
             this.X26.add(X26List[i]);
+            if (X26List[i] == 0) {
+                PacDots.add(new PacDot(26, i));
+            }
         }
     }
 
