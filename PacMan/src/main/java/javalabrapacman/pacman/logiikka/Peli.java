@@ -61,10 +61,6 @@ public class Peli extends JPanel implements ActionListener {
         timer = new Timer(40, this);
         gameInit();
     }
-    
-    public void getImages(){
-        pacman1right = new ImageIcon(getClass().getResource("/src/pacman1right.png")).getImage();
-    }
 
     public void gameInit() {
         this.Map.MapCreate();
@@ -75,7 +71,6 @@ public class Peli extends JPanel implements ActionListener {
         this.Ghost4.ghost4Create();
         timer.start();
         this.ongoing = true;
-        getImages();
     }
 
     public void drawMap(Graphics2D g2d) {
@@ -107,7 +102,7 @@ public class Peli extends JPanel implements ActionListener {
 
     public void drawPacman(Graphics2D g2d) {
         g2d.setColor(Color.BLUE);
-        g2d.drawImage(pacman1right, Pacman.locationX()*20, Pacman.locationY()*20, this);
+        g2d.drawRect(Pacman.locationX()*20, Pacman.locationY()*20, 20, 20);
         
     }
 
