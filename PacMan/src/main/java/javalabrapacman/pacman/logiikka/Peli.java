@@ -9,7 +9,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Font;
-import java.awt.FontMetrics;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -35,8 +34,10 @@ public class Peli extends JPanel implements ActionListener {
     int deathcounter = 0;
     int totalscore;
     int score;
+    boolean Super = false;
     Timer timer;
     Color mapcolor;
+    long stime;
     Maailma Map = new Maailma();
     Olio Pacman = new Olio();
     Olio Ghost1 = new Olio();
@@ -45,7 +46,11 @@ public class Peli extends JPanel implements ActionListener {
     Olio Ghost4 = new Olio();
     int pmx = 0;
     int pmy = 0;
-
+    Image pacman1down;
+    Image pacman1up;
+    Image pacman1left;
+    Image pacman1right;
+    
     public Peli() {
         addKeyListener(new KeyPress());
         mapcolor = new Color(5, 100, 5);
@@ -55,6 +60,10 @@ public class Peli extends JPanel implements ActionListener {
         setDoubleBuffered(true);
         timer = new Timer(40, this);
         gameInit();
+    }
+    
+    public void getImages(){
+        pacman1right = new ImageIcon(getClass().getResource("/src/pacman1right.png")).getImage();
     }
 
     public void gameInit() {
@@ -66,6 +75,7 @@ public class Peli extends JPanel implements ActionListener {
         this.Ghost4.ghost4Create();
         timer.start();
         this.ongoing = true;
+        getImages();
     }
 
     public void drawMap(Graphics2D g2d) {
@@ -81,6 +91,13 @@ public class Peli extends JPanel implements ActionListener {
                             g2d.setColor(Color.YELLOW);
                             g2d.drawRect(x * 20, y * 20, 19, 19);
                         }
+
+                    }
+                    for (int i = 0; i < this.Map.SPacDots.size(); i++) {
+                        if (this.Map.SPacDots.get(i).getX() == x && this.Map.SPacDots.get(i).getY() == y) {
+                            g2d.setColor(Color.MAGENTA);
+                            g2d.drawRect(x * 20, y * 20, 19, 19);
+                        }
                     }
                 }
 
@@ -90,11 +107,16 @@ public class Peli extends JPanel implements ActionListener {
 
     public void drawPacman(Graphics2D g2d) {
         g2d.setColor(Color.BLUE);
-        g2d.drawRect(Pacman.locationX() * 20, Pacman.locationY() * 20, 20, 20);
+        g2d.drawImage(pacman1right, Pacman.locationX()*20, Pacman.locationY()*20, this);
+        
     }
 
     public void drawGhosts(Graphics2D g2d) {
-        g2d.setColor(Color.RED);
+        if (Super) {
+            g2d.setColor(Color.WHITE);
+        } else {
+            g2d.setColor(Color.RED);
+        }
         g2d.drawRect(Ghost1.locationX() * 20, Ghost1.locationY() * 20, 20, 20);
         g2d.drawRect(Ghost2.locationX() * 20, Ghost2.locationY() * 20, 20, 20);
         g2d.drawRect(Ghost3.locationX() * 20, Ghost3.locationY() * 20, 20, 20);
@@ -110,6 +132,15 @@ public class Peli extends JPanel implements ActionListener {
         g2d.drawString(dc, 1, 640);
         g2d.drawString(s, 150, 640);
         g2d.drawString(ts, 300, 640);
+    }
+
+    public void timingSuper() {
+        if(this.Super){
+            if((this.stime+10000)<System.currentTimeMillis()){
+                this.Super=false;
+                
+            }
+        }
     }
 
     public void moveGhosts() {
@@ -133,6 +164,32 @@ public class Peli extends JPanel implements ActionListener {
         gameInit();
     }
 
+    public void checkCollideDS() {
+        if (this.Pacman.locationX() == this.Ghost1.locationX() && this.Pacman.locationY() == this.Ghost1.locationY()) {
+            this.Ghost1.setLocation(13, 11);
+        } else if (this.Pacman.locationX() == this.Ghost2.locationX() && this.Pacman.locationY() == this.Ghost2.locationY()) {
+            this.Ghost2.setLocation(12, 14);
+        } else if (this.Pacman.locationX() == this.Ghost3.locationX() && this.Pacman.locationY() == this.Ghost3.locationY()) {
+            this.Ghost3.setLocation(13, 14);
+        } else if (this.Pacman.locationX() == this.Ghost4.locationX() && this.Pacman.locationY() == this.Ghost4.locationY()) {
+            this.Ghost4.setLocation(14, 14);
+        }
+        for (int i = 0; i < this.Map.PacDots.size(); i++) {
+            if (this.Map.PacDots.get(i).getX() == this.Pacman.locationX() && this.Map.PacDots.get(i).getY() == this.Pacman.locationY()) {
+                this.score = this.score + 10;
+                this.totalscore = this.totalscore + 10;
+                this.Map.PacDots.remove(i);
+            }
+        }
+        for (int i = 0; i < this.Map.SPacDots.size(); i++) {
+            if (this.Map.SPacDots.get(i).getX() == this.Pacman.locationX() && this.Map.SPacDots.get(i).getY() == this.Pacman.locationY()) {
+                this.Super = true;
+                stime=System.currentTimeMillis();
+                this.Map.SPacDots.remove(i);
+            }
+        }
+    }
+
     public void checkCollide() {
         if (this.Pacman.locationX() == this.Ghost1.locationX() && this.Pacman.locationY() == this.Ghost1.locationY()) {
             death();
@@ -150,18 +207,34 @@ public class Peli extends JPanel implements ActionListener {
                 this.Map.PacDots.remove(i);
             }
         }
+        for (int i = 0; i < this.Map.SPacDots.size(); i++) {
+            if (this.Map.SPacDots.get(i).getX() == this.Pacman.locationX() && this.Map.SPacDots.get(i).getY() == this.Pacman.locationY()) {
+                this.Super = true;
+                stime=System.currentTimeMillis();
+                this.Map.SPacDots.remove(i);
+            }
+        }
     }
 
     public void play(Graphics2D g2d) {
+        timingSuper();
         movePacman();
-        checkCollide();
+        if (Super) {
+            checkCollideDS();
+        } else {
+            checkCollide();
+        }
         moveGhosts();
-        checkCollide();
+        if (Super) {
+            checkCollideDS();
+        } else {
+            checkCollide();
+        }
         drawPacman(g2d);
         drawGhosts(g2d);
         if (this.Map.PacDots.isEmpty()) {
-            this.score=this.score+1000;
-            this.totalscore=this.totalscore+1000;
+            this.score = this.score + 1000;
+            this.totalscore = this.totalscore + 1000;
             gameInit();
         }
     }

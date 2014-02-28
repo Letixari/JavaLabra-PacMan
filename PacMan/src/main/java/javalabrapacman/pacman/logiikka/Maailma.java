@@ -42,6 +42,7 @@ public class Maailma {
     private ArrayList<Integer> X26 = new ArrayList<Integer>();
     private ArrayList<Integer> X27 = new ArrayList<Integer>();
     public ArrayList<PacDot> PacDots = new ArrayList<PacDot>();
+    public ArrayList<PacDot> SPacDots = new ArrayList<PacDot>();
 
     public void MapCreate() {
         X0Create();
@@ -211,6 +212,9 @@ public class Maailma {
         for (int i = 0; i < X1List.length; i++) {
             this.X1.add(X1List[i]);
             if (X1List[i] == 0) {
+                if (i == 1 || i == 29) {
+                    SPacDots.add(new PacDot(1, i));
+                }
                 PacDots.add(new PacDot(1, i));
             }
         }
@@ -482,7 +486,11 @@ public class Maailma {
         for (int i = 0; i < X26List.length; i++) {
             this.X26.add(X26List[i]);
             if (X26List[i] == 0) {
-                PacDots.add(new PacDot(26, i));
+                if (i == 1 || i == 29) {
+                    SPacDots.add(new PacDot(26, i));
+                } else {
+                    PacDots.add(new PacDot(26, i));
+                }
             }
         }
     }
