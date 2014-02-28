@@ -311,7 +311,7 @@ public class Maailma {
     }
 
     public void X11Create() {
-        int X11List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        int X11List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X11List.length; i++) {
             this.X11.add(X11List[i]);
             if (X11List[i] == 0) {
@@ -323,7 +323,7 @@ public class Maailma {
     }
 
     public void X12Create() {
-        int X12List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        int X12List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X12List.length; i++) {
             this.X12.add(X12List[i]);
             if (X12List[i] == 0) {
@@ -335,7 +335,7 @@ public class Maailma {
     }
 
     public void X13Create() {
-        int X13List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        int X13List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X13List.length; i++) {
             this.X13.add(X13List[i]);
             if (X13List[i] == 0) {
@@ -347,7 +347,7 @@ public class Maailma {
     }
 
     public void X14Create() {
-        int X14List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
+        int X14List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X14List.length; i++) {
             this.X14.add(X14List[i]);
             if (X14List[i] == 0) {
@@ -359,7 +359,7 @@ public class Maailma {
     }
 
     public void X15Create() {
-        int X15List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
+        int X15List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X15List.length; i++) {
             this.X15.add(X15List[i]);
             if (X15List[i] == 0) {
@@ -371,7 +371,7 @@ public class Maailma {
     }
 
     public void X16Create() {
-        int X16List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
+        int X16List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X16List.length; i++) {
             this.X16.add(X16List[i]);
             if (X16List[i] == 0) {

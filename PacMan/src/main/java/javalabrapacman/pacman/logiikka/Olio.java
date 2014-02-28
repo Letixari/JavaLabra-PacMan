@@ -18,6 +18,8 @@ public class Olio {
     private int Y = 0;
     private int movementX = 0;
     private int movementY = 0;
+    private int oldmX = 0;
+    private int oldmY = 0;
     private boolean IsPacman;
     Maailma Map = new Maailma();
 
@@ -63,16 +65,32 @@ public class Olio {
         } else {
             switch (random) {
                 case 1:
-                    move(0, 1);
+                    if (this.oldmY != -1) {
+                        move(0, 1);
+                    } else {
+                        move(0, -1);
+                    }
                     break;
                 case 2:
-                    move(0, -1);
+                    if (this.oldmY != 1) {
+                        move(0, -1);
+                    } else {
+                        move(0, 1);
+                    }
                     break;
                 case 3:
-                    move(-1, 0);
+                    if (this.oldmX != 1) {
+                        move(-1, 0);
+                    } else {
+                        move(1, 0);
+                    }
                     break;
                 case 4:
-                    move(1, 0);
+                    if (this.oldmX != -1) {
+                        move(1, 0);
+                    } else {
+                        move(-1, 0);
+                    }
                     break;
             }
         }
@@ -83,6 +101,8 @@ public class Olio {
         if (wallCheck(mx, my) == false) {
             this.movementX = mx;
             this.movementY = my;
+            this.oldmX=mx;
+            this.oldmY=my;
             movement();
         } else {
             if (wallCheck(this.movementX, this.movementY)) {
