@@ -8,7 +8,7 @@ package javalabrapacman.pacman.logiikka;
 import java.util.ArrayList;
 
 /**
- *
+ * Class is used for map related purposes.
  * @author Letixari
  */
 public class Maailma {
@@ -44,6 +44,9 @@ public class Maailma {
     public ArrayList<PacDot> PacDots = new ArrayList<PacDot>();
     public ArrayList<PacDot> SPacDots = new ArrayList<PacDot>();
 
+    /**
+     * Starts the methods for map generation.
+     */
     public void MapCreate() {
         X0Create();
         X1Create();
@@ -74,7 +77,13 @@ public class Maailma {
         X26Create();
         X27Create();
     }
-
+    
+    /**
+     * Checks the given parameters to a existing wall.
+     * @param x x-coordinate
+     * @param y y-coordinate
+     * @return Returns true if wall is found at parameter location.
+     */
     public boolean wallCheck(int x, int y) {
         int wallstatus = 1;
         switch (x) {
@@ -169,37 +178,9 @@ public class Maailma {
         return false;
     }
 
-    public void print() {
-        System.out.println(this.X0.toString());
-        System.out.println(this.X1.toString());
-        System.out.println(this.X2.toString());
-        System.out.println(this.X3.toString());
-        System.out.println(this.X4.toString());
-        System.out.println(this.X5.toString());
-        System.out.println(this.X6.toString());
-        System.out.println(this.X7.toString());
-        System.out.println(this.X8.toString());
-        System.out.println(this.X9.toString());
-        System.out.println(this.X10.toString());
-        System.out.println(this.X11.toString());
-        System.out.println(this.X12.toString());
-        System.out.println(this.X13.toString());
-        System.out.println(this.X14.toString());
-        System.out.println(this.X15.toString());
-        System.out.println(this.X16.toString());
-        System.out.println(this.X17.toString());
-        System.out.println(this.X18.toString());
-        System.out.println(this.X19.toString());
-        System.out.println(this.X20.toString());
-        System.out.println(this.X21.toString());
-        System.out.println(this.X22.toString());
-        System.out.println(this.X23.toString());
-        System.out.println(this.X24.toString());
-        System.out.println(this.X25.toString());
-        System.out.println(this.X26.toString());
-        System.out.println(this.X27.toString());
-    }
-
+    /**
+     * Creates row for coordinate X0 Arraylist.
+     */
     public void X0Create() {
         int X0List[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
         for (int i = 0; i < X0List.length; i++) {
@@ -207,6 +188,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X1.
+     */
     public void X1Create() {
         int X1List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X1List.length; i++) {
@@ -220,6 +204,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X2.
+     */
     public void X2Create() {
         int X2List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X2List.length; i++) {
@@ -230,6 +217,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X3.
+     */
     public void X3Create() {
         int X3List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X3List.length; i++) {
@@ -240,6 +230,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X4.
+     */
     public void X4Create() {
         int X4List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X4List.length; i++) {
@@ -250,6 +243,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X5.
+     */
     public void X5Create() {
         int X5List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X5List.length; i++) {
@@ -260,6 +256,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X6.
+     */
     public void X6Create() {
         int X6List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X6List.length; i++) {
@@ -270,6 +269,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X7.
+     */
     public void X7Create() {
         int X7List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X7List.length; i++) {
@@ -280,6 +282,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X8.
+     */
     public void X8Create() {
         int X8List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X8List.length; i++) {
@@ -290,6 +295,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X9.
+     */
     public void X9Create() {
         int X9List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X9List.length; i++) {
@@ -302,6 +310,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X10.
+     */
     public void X10Create() {
         int X10List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X10List.length; i++) {
@@ -314,6 +325,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X11.
+     */
     public void X11Create() {
         int X11List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X11List.length; i++) {
@@ -326,6 +340,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X12.
+     */
     public void X12Create() {
         int X12List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X12List.length; i++) {
@@ -338,6 +355,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X13.
+     */
     public void X13Create() {
         int X13List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X13List.length; i++) {
@@ -350,6 +370,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X14.
+     */
     public void X14Create() {
         int X14List[] = {1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X14List.length; i++) {
@@ -362,6 +385,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X15.
+     */
     public void X15Create() {
         int X15List[] = {1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X15List.length; i++) {
@@ -374,6 +400,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X16. Getting repetitive yet?
+     */
     public void X16Create() {
         int X16List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X16List.length; i++) {
@@ -386,6 +415,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X17.
+     */
     public void X17Create() {
         int X17List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X17List.length; i++) {
@@ -398,6 +430,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X18.
+     */
     public void X18Create() {
         int X18List[] = {1, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X18List.length; i++) {
@@ -411,6 +446,9 @@ public class Maailma {
 
     }
 
+    /**
+     * Creates row for coordinate X19.
+     */
     public void X19Create() {
         int X19List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X19List.length; i++) {
@@ -421,6 +459,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X20.
+     */
     public void X20Create() {
         int X20List[] = {1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1};
         for (int i = 0; i < X20List.length; i++) {
@@ -431,6 +472,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X21.
+     */
     public void X21Create() {
         int X21List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X21List.length; i++) {
@@ -441,6 +485,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X22.
+     */
     public void X22Create() {
         int X22List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X22List.length; i++) {
@@ -451,6 +498,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X23.
+     */
     public void X23Create() {
         int X23List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X23List.length; i++) {
@@ -461,6 +511,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X24.
+     */
     public void X24Create() {
         int X24List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 1};
         for (int i = 0; i < X24List.length; i++) {
@@ -471,6 +524,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X25.
+     */
     public void X25Create() {
         int X25List[] = {1, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1};
         for (int i = 0; i < X25List.length; i++) {
@@ -481,6 +537,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X26.
+     */
     public void X26Create() {
         int X26List[] = {1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1};
         for (int i = 0; i < X26List.length; i++) {
@@ -495,6 +554,9 @@ public class Maailma {
         }
     }
 
+    /**
+     * Creates row for coordinate X27.
+     */
     public void X27Create() {
         int X27List[] = {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1};
         for (int i = 0; i < X27List.length; i++) {

@@ -9,6 +9,9 @@ public class App extends JFrame {
         new App();
     }
 
+    /**
+     *Starts the game
+     */
     public App() {
         add(new Peli());
         setTitle("Pacman");

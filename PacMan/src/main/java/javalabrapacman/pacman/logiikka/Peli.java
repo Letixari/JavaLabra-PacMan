@@ -23,7 +23,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 /**
- *
+ * Class is used to run the game and draw the screen.
  * @author Letixari
  */
 public class Peli extends JPanel implements ActionListener {
@@ -51,6 +51,9 @@ public class Peli extends JPanel implements ActionListener {
     Image pacman1left;
     Image pacman1right;
     
+    /**
+     * Method is used to setup the game.
+     */
     public Peli() {
         addKeyListener(new KeyPress());
         mapcolor = new Color(5, 100, 5);
@@ -62,6 +65,9 @@ public class Peli extends JPanel implements ActionListener {
         gameInit();
     }
 
+    /**
+     * Method is used to start the game and return everything to default location incase of Pacman death.
+     */
     public void gameInit() {
         this.Map.MapCreate();
         this.Pacman.pacmanCreate();
@@ -73,6 +79,10 @@ public class Peli extends JPanel implements ActionListener {
         this.ongoing = true;
     }
 
+    /**
+     * Method is used to draw the map and pacdots on the screen.
+     * @param g2d
+     */
     public void drawMap(Graphics2D g2d) {
         int x, y;
         for (x = 0; x <= 27; x += 1) {
@@ -100,12 +110,20 @@ public class Peli extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Method is used to draw Pacman on the screen.
+     * @param g2d
+     */
     public void drawPacman(Graphics2D g2d) {
         g2d.setColor(Color.BLUE);
         g2d.drawRect(Pacman.locationX()*20, Pacman.locationY()*20, 20, 20);
         
     }
 
+    /**
+     * Method is used to draw Ghosts on the screen.
+     * @param g2d
+     */
     public void drawGhosts(Graphics2D g2d) {
         if (Super) {
             g2d.setColor(Color.WHITE);
@@ -118,6 +136,10 @@ public class Peli extends JPanel implements ActionListener {
         g2d.drawRect(Ghost4.locationX() * 20, Ghost4.locationY() * 20, 20, 20);
     }
 
+    /**
+     * Method is used to draw score and death counter on the screen.
+     * @param g2d
+     */
     public void drawScore(Graphics2D g2d) {
         g2d.setFont(font);
         g2d.setColor(Color.ORANGE);
@@ -129,6 +151,9 @@ public class Peli extends JPanel implements ActionListener {
         g2d.drawString(ts, 300, 640);
     }
 
+    /**
+     * Times the Superpowered Pacman to end the time when Pacman can eat ghosts.
+     */
     public void timingSuper() {
         if(this.Super){
             if((this.stime+10000)<System.currentTimeMillis()){
@@ -138,6 +163,9 @@ public class Peli extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Method is used for moving all of the ghosts in a random direction with some rules.
+     */
     public void moveGhosts() {
         this.Ghost1.moveRandom();
         this.Ghost2.moveRandom();
@@ -145,10 +173,16 @@ public class Peli extends JPanel implements ActionListener {
         this.Ghost4.moveRandom();
     }
 
+    /**
+     * Method is used to move Pacman in chosen direction
+     */
     public void movePacman() {
         this.Pacman.move(this.pmx, this.pmy);
     }
 
+    /**
+     * Caused by Ghost collading with Pacman and adds 1 death to the counter and resets the board.
+     */
     public void death() {
         this.ongoing = false;
         this.deathcounter++;
@@ -159,6 +193,9 @@ public class Peli extends JPanel implements ActionListener {
         gameInit();
     }
 
+    /**
+     * Method is used to check collision during superpowered Pacman. If Pacman collides with any ghost that ghost is sent to starting location. If Pacman collides with a pacdot he eats it and the pacdot is removed.
+     */
     public void checkCollideDS() {
         if (this.Pacman.locationX() == this.Ghost1.locationX() && this.Pacman.locationY() == this.Ghost1.locationY()) {
             this.Ghost1.setLocation(13, 11);
@@ -185,6 +222,9 @@ public class Peli extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Method is used to check collision during normal gameplay. If Pacman collides with any ghost, Pacman dies. If Pacman collides with a pacdot he eats it and the pacdot is removed.
+     */
     public void checkCollide() {
         if (this.Pacman.locationX() == this.Ghost1.locationX() && this.Pacman.locationY() == this.Ghost1.locationY()) {
             death();
@@ -211,6 +251,10 @@ public class Peli extends JPanel implements ActionListener {
         }
     }
 
+    /**
+     * Method is used to run all the gameplay methods.
+     * @param g2d
+     */
     public void play(Graphics2D g2d) {
         timingSuper();
         movePacman();
