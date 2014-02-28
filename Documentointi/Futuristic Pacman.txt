@@ -1,0 +1,13 @@
+Aihe: Pacman
+Tarkoituksena oli luoda Pacman futuristisella lookilla, mutta aikakiireiden takia jäi vähän tälläiseksi... Tarkoituksena on vielä omalla ajalla parannella tämä haluttuun kuntoon.
+
+Käyttäjät: Pelaajat
+
+Kaikkien käyttäjien toiminnot:
+	Pacmanin pelaaminen
+	"Hieno" futuristinen ulkonäkö...
+
+App -luokkaa käytetään pelin avaamiseen.
+Peli -luokkaa käytetään pelin pyörittämiseen ja asioiden piirtämiseen ruudulle.
+Maailma -luokkaa käytetään mapin luontiin ja seinätarkistuksiin.
+Olio -luokkaa käytetään Pacmanin ja haamujen luontiin ja niihin liittyviin tarkoituksiin.

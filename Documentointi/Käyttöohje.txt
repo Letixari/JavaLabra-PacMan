@@ -1,0 +1,13 @@
+Futuristisen PacManin käyttöohje:
+Väritykset:
+Vihreä neliö = kartan rajaa(auluetta jolle ei pääse)
+Sininen neliö = PacMan(sinä hallitset)
+Punaiset neliöt = Haamut(Tietokoneen hallitsemia)
+Keltaiset neliöt = pacdotteja, joita syömällä saat pisteitä
+Pinkit/Magenta neliöt = Super pacdotteja, niitä syömällä Pacman saa super voimia.
+
+Tarkoitus:
+Pelin tarkoituksena on selvitä mahdollisimman pitkään ja saada syötyä mahdollisimman paljon pacdotteja. Jokaisesta pacdotista saa 10 pistettä ja jos saa kaikki laudalla olevat pacdotit elämän aikana saa 1000 pistettä.
+Pelissä on kummiskin 4 punaista haamua jotka haluavat "tappaa" Pacmanin törmäämällä häneen. Pacman voi kummiskin syödä super pacdotin, jolla hän saa super voimia ja pystyy syödä haamuja 10 sekunttia.
+
+Peli laskee kuolemia, total pisteitä ja pisteitä jotka olet saanut tällä kierroksella.

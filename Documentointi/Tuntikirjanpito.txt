@@ -1,3 +1,5 @@
 Tuntikirjanpito
 
 16.1.2014  - 30min – GitHub luonti, rekisteröinti
+
+Tätä on vähän unohtunut kirjoittaa mutta ekat pari viikkoa käytin nelisen tuntia viikossa. Viikon 3 olin sairaana enkä tullut koneelle. Viikolla 4 en päässyt koneelle henkilökohtaisista syistä. Viikolla 5 ja 6 käytin jo aika paljon aikaa tähän että saisin mahdollisimman paljon tehtyä, mutta koodista ja pelistä näkee että peli on vielä vähän kesken. Haluaisin lisätä vielä spritejä(jotka osat valmiina), scoreboardin ja muita jänniä ja hauskoja ominaisuuksia. Tarkoituksena olisi vielä kehittää tätä peliä kurssin jälkeen.
